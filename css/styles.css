@@ -1,5 +1,5 @@
 /* ========================
-   1.ก Universal Selector & Reset
+   Universal Selector & Reset
    ======================== */
 * {
   margin: 0;
@@ -17,7 +17,7 @@ body {
 }
 
 /* ========================
-   1.ข Element Selectors
+       Element Selectors
    ======================== */
 h1,
 h2,
@@ -67,7 +67,7 @@ a:hover {
 }
 
 /* ========================
-   1.ค Class Selectors
+        Class Selectors
    ======================== */
 .btn {
   display: inline-block;
@@ -96,7 +96,7 @@ a:hover {
 }
 
 /* ========================
-   1.ง ID Selectors & 5. Positioning
+        ID Selectors 
    ======================== */
 #Header {
   background-color: #3b5998;
@@ -122,6 +122,9 @@ a:hover {
   display: block;
 }
 
+/* ============
+      footer 
+   ============ */
 #footer {
   background-color: #3b5998;
   color: #ffffff;
@@ -129,6 +132,10 @@ a:hover {
   margin-top: 50px;
   text-align: left;
   font-size: 0.9rem;
+}
+#footer p {
+  color: #ffffff;
+  margin: 0; /*เปลี่ยนสีข้อความให้เป็นสีขาว */
 }
 
 /* ========================
@@ -166,7 +173,7 @@ a:hover {
 }
 
 /* ========================
-   1.จ Pseudo-classes
+       Pseudo-classes
    ======================== */
 .card {
   background-color: white;
@@ -200,4 +207,67 @@ article ol li:nth-child(odd) {
 
 article ol li:nth-child(even) {
   background-color: #e4e6eb;
+}
+
+/* ========================
+        Percentage (%) 
+   ======================== */
+
+/* 1. สั่งให้รูปภาพทุกรูปในเว็บ ไม่ล้นกรอบ (สำคัญมาก!) */
+img {
+  max-width: 100%; /* กว้างไม่เกิน 100% ของพื้นที่ที่มี */
+  height: auto; /* สูงตามสัดส่วนเดิม */
+}
+
+/* 2. กำหนดขนาดการ์ดเตรียมไว้ (สำหรับหน้าบริการ) */
+.card {
+  width: 30%; /* ให้กว้าง 30% เพื่อเรียง 3 กล่องได้พอดี */
+}
+
+/* =============================
+   Viewport Units (Hero Section)
+   ============================= */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 50px;
+
+  /* --- แก้ตรงนี้: ลดสีขาวลง (จาก 0.9 เหลือ 0.5) จะได้เห็นรูปชัดๆ --- */
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1920&auto=format&fit=crop");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 5px solid #1877f2;
+}
+
+/* ปรับหัวข้อให้ชัดขึ้น */
+.hero h2 {
+  font-size: 5vw;
+  margin-bottom: 20px;
+  color: #1877f2;
+  text-shadow: 2px 2px 0px #ffffff;
+}
+/* ตกแต่งกล่องข้อความข้างใน Hero ให้ลอยเด่นออกมา */
+.hero article {
+  background-color: rgba(255, 255, 255, 0.9); /* สีขาวโปร่งแสง 90% */
+  padding: 40px; /* เว้นระยะขอบข้างในให้น่าอ่าน */
+  border-radius: 15px; /* มุมโค้งมน */
+  max-width: 800px; /* จำกัดความกว้างไม่ให้ยืดเต็มจอเกินไป */
+  margin: 0 auto; /* จัดกึ่งกลางแนวนอน */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* ใส่เงาให้กล่องดูลอยมีมิติ */
+  text-align: center; /* จัดตัวหนังสือให้อยู่ตรงกลางกล่อง */
+}
+
+/* (แถม) ปรับหัวข้อข้างในให้สวยขึ้นอีกนิด */
+.hero article h2 {
+  color: #1877f2; /* สีน้ำเงิน Facebook */
+  font-size: 3rem; /* ขนาดกำลังดี */
+  margin-bottom: 20px;
 }
