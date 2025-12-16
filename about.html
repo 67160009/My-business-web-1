@@ -5,37 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="เกี่ยวกับบริษัทของเรา ประวัติและความเป็นมา"
+      content="เกี่ยวกับบริษัทของเรา ประวัติและความเป็นมา Meta Facebook"
     />
     <meta name="author" content="นายทักษ์ดนัย แสนทวีสุข" />
     <title>เกี่ยวกับเรา - Facebook</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
-    <div class="nav-bar">
-      <a
-        href="index.html"
-        style="
-          float: left;
-          font-size: 1.5rem;
-          color: #1877f2;
-          padding-left: 0;
-          margin-left: 0;
-        "
-        >facebook</a
-      >
-      <a href="index.html">หน้าแรก</a>
-      <a href="about.html">เกี่ยวกับ</a>
-      <a href="services.html">บริการ</a>
-      <a href="contact.html">ติดต่อ</a>
-    </div>
+    <nav class="nav-bar">
+      <div class="nav-links">
+        <a href="index.html">หน้าแรก</a>
+        <a href="about.html" class="active">เกี่ยวกับ</a>
+        <a href="services.html">บริการ</a>
+        <a href="contact.html">ติดต่อ</a>
+      </div>
+    </nav>
 
-    <div class="container">
-      <article style="margin-bottom: 50px">
-        <h1 style="text-align: center; margin-bottom: 20px">
-          เรื่องราวของบริษัท
-        </h1>
-        <p style="text-align: justify">
+    <div class="container page-content">
+      <article class="story-section">
+        <h1>เรื่องราวของบริษัท</h1>
+        <p>
           บริษัทของเราเริ่มต้นจากความตั้งใจที่จะเชื่อมต่อผู้คนให้เข้าใกล้กันมากขึ้นในโลกดิจิทัล
           เราเชื่อว่าการสื่อสารที่ดีสามารถสร้างความสัมพันธ์ที่แข็งแรง
           และช่วยให้ผู้คนแบ่งปันประสบการณ์ที่มีคุณค่าร่วมกันได้
@@ -52,113 +41,52 @@
         </p>
       </article>
 
-      <hr style="border: 0; border-top: 1px solid #ddd; margin: 40px 0" />
+      <hr class="divider" />
 
-      <article>
-        <h2 style="text-align: center; margin-bottom: 30px">ทีมของเรา</h2>
-
+      <article class="team-section">
+        <h2>ทีมของเรา</h2>
         <div class="team">
           <div class="team-member">
-            <img
-              src="images/Mark.webp"
-              alt="Mark Zuckerberg"
-              style="
-                border-radius: 50%;
-                width: 120px;
-                height: 120px;
-                object-fit: cover;
-                margin-bottom: 15px;
-              "
-            />
+            <img src="images/Mark.webp" alt="Mark Zuckerberg" />
             <h3>Mark Zuckerberg</h3>
-            <p style="color: #666">Founder & CEO of Meta</p>
+            <p>Founder & CEO of Meta</p>
           </div>
 
           <div class="team-member">
-            <img
-              src="images/Andrew.jpg"
-              alt="Andrew Bosworth"
-              style="
-                border-radius: 50%;
-                width: 120px;
-                height: 120px;
-                object-fit: cover;
-                margin-bottom: 15px;
-              "
-            />
+            <img src="images/Andrew.jpg" alt="Andrew Bosworth" />
             <h3>Andrew Bosworth</h3>
-            <p style="color: #666">CTO</p>
+            <p>CTO</p>
           </div>
 
           <div class="team-member">
-            <img
-              src="images/Javier.jpg"
-              alt="Javier Olivan"
-              style="
-                border-radius: 50%;
-                width: 120px;
-                height: 120px;
-                object-fit: cover;
-                margin-bottom: 15px;
-              "
-            />
+            <img src="images/Javier.jpg" alt="Javier Olivan" />
             <h3>Javier Olivan</h3>
-            <p style="color: #666">COO</p>
+            <p>COO</p>
           </div>
 
           <div class="team-member">
-            <img
-              src="images/Susan.jpg"
-              alt="Susan Li"
-              style="
-                border-radius: 50%;
-                width: 120px;
-                height: 120px;
-                object-fit: cover;
-                margin-bottom: 15px;
-              "
-            />
+            <img src="images/Susan.jpg" alt="Susan Li" />
             <h3>Susan Li</h3>
-            <p style="color: #666">CFO</p>
+            <p>CFO</p>
           </div>
 
           <div class="team-member">
-            <img
-              src="images/Nick Clegg.avif"
-              alt="Nick Clegg"
-              style="
-                border-radius: 50%;
-                width: 120px;
-                height: 120px;
-                object-fit: cover;
-                margin-bottom: 15px;
-              "
-            />
+            <img src="images/Nick Clegg.avif" alt="Nick Clegg" />
             <h3>Nick Clegg</h3>
-            <p style="color: #666">President, Global Affairs</p>
+            <p>President, Global Affairs</p>
           </div>
         </div>
       </article>
 
-      <hr style="border: 0; border-top: 1px solid #ddd; margin: 40px 0" />
+      <hr class="divider" />
 
       <section id="mission-vision">
-        <div style="display: flex; gap: 20px; flex-wrap: wrap">
-          <div
-            style="
-              flex: 1;
-              background: white;
-              padding: 20px;
-              border-radius: 8px;
-              border: 1px solid #ddd;
-            "
-          >
+        <div class="mv-grid">
+          <div class="mv-card">
             <h2>Mission</h2>
-            <p>
-              <strong
-                >“to give people the power to build community and bring the
-                world closer together.”</strong
-              >
+            <p class="quote">
+              “to give people the power to build community and bring the world
+              closer together.”
             </p>
             <p>
               Meta มองว่าเทคโนโลยีและแพลตฟอร์มของตนควรช่วยให้ผู้คนสามารถ
@@ -167,21 +95,11 @@
             </p>
           </div>
 
-          <div
-            style="
-              flex: 1;
-              background: white;
-              padding: 20px;
-              border-radius: 8px;
-              border: 1px solid #ddd;
-            "
-          >
+          <div class="mv-card">
             <h2>Vision</h2>
-            <p>
-              <strong
-                >“to bring the metaverse to life and help people connect, find
-                communities and grow businesses.”</strong
-              >
+            <p class="quote">
+              “to bring the metaverse to life and help people connect, find
+              communities and grow businesses.”
             </p>
             <p>
               บริษัทตั้งใจผลักดันให้ “เมตาเวิร์ส” กลายเป็น “ชีวิตจริง”
@@ -192,10 +110,12 @@
         </div>
       </section>
     </div>
+
     <div id="footer">
       <p>
         Facebook &copy; 2025 เชื่อมต่อผู้คนทั่วโลกเพื่อสร้างชุมชนที่แข็งแรงขึ้น
       </p>
     </div>
+    <a href="#" class="btn-top">↑ Top</a>
   </body>
 </html>

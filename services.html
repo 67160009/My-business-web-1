@@ -2,43 +2,30 @@
 <html lang="th">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="บริการทั้งหมดที่บริษัทของเรามีให้ เช่น การเชื่อมต่อ การจัดการชุมชน และโซลูชันธุรกิจ"
-    />
-    <meta name="author" content="นายทักษ์ดนัย แสนทวีสุข" />
     <title>บริการของเรา - Facebook</title>
-    <link rel="stylesheet" href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5qL8uS2bX0sJ4F9Q8MhXQ8I8uT+JgWk5vPq5I3P6+D+Q9R6t2r4+y8qB8uA4Q8P5uQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="nav-bar">
-      <a
-        href="index.html"
-        style="
-          float: left;
-          font-size: 1.5rem;
-          color: #1877f2;
-          padding-left: 0;
-          margin-left: 0;
-        "
-        >facebook</a
-      >
-      <a href="index.html">หน้าแรก</a>
-      <a href="about.html">เกี่ยวกับ</a>
-      <a href="services.html">บริการ</a>
-      <a href="contact.html">ติดต่อ</a>
-    </div>
+    <nav class="nav-bar">
+      <div class="nav-links">
+        <a href="index.html">หน้าแรก</a>
+        <a href="about.html">เกี่ยวกับ</a>
+        <a href="services.html" class="active">บริการ</a>
+        <a href="contact.html">ติดต่อ</a>
+      </div>
+    </nav>
 
-    <div class="container">
-      <header style="text-align: center; margin-bottom: 40px">
-        <figure>
-          <img
-            src="images/face.png"
-            alt="Services Header"
-            style="max-width: 200px; width: 100%; margin-bottom: 20px"
-          />
-        </figure>
+    <div class="container page-content">
+      <header class="page-header">
         <h1>บริการทั้งหมดของเรา</h1>
         <p>สิ่งที่ช่วยให้คุณเชื่อมต่อกับโลกใบนี้ได้ง่ายขึ้น</p>
       </header>
@@ -46,7 +33,7 @@
       <section id="services-list">
         <div class="services-grid">
           <div class="card">
-            <h3>บริการเชื่อมต่อผู้คน</h3>
+            <h3><i class="fas fa-users"></i> บริการเชื่อมต่อผู้คน</h3>
             <p>
               ฟีเจอร์สำหรับการแชท โทร วิดีโอคอล และการแชร์โพสต์
               ช่วยให้ผู้ใช้สามารถเชื่อมต่อกับเพื่อน ครอบครัว และชุมชนได้ตลอดเวลา
@@ -54,7 +41,7 @@
           </div>
 
           <div class="card">
-            <h3>จัดการชุมชนและกลุ่ม</h3>
+            <h3><i class="fas fa-comments"></i> จัดการชุมชนและกลุ่ม</h3>
             <p>
               พื้นที่สำหรับสร้างกลุ่มตามความสนใจ ร่วมพูดคุย แลกเปลี่ยนความรู้
               และทำกิจกรรมร่วมกันอย่างสะดวกและปลอดภัย
@@ -62,7 +49,7 @@
           </div>
 
           <div class="card">
-            <h3>บริการสำหรับธุรกิจ</h3>
+            <h3><i class="fas fa-briefcase"></i> บริการสำหรับธุรกิจ</h3>
             <p>
               โซลูชันสำหรับธุรกิจในการสร้างเพจ เข้าถึงลูกค้า โปรโมตสินค้า
               รวมถึงเครื่องมือโฆษณาเพื่อเพิ่มยอดขายและการมองเห็น
@@ -70,7 +57,7 @@
           </div>
 
           <div class="card">
-            <h3>เครื่องมือสร้างคอนเทนต์</h3>
+            <h3><i class="fas fa-paint-brush"></i> เครื่องมือสร้างคอนเทนต์</h3>
             <p>
               ชุดเครื่องมือสร้างโพสต์ รูปภาพ วิดีโอ และ Reels
               พร้อมฟีเจอร์ปรับแต่งคอนเทนต์ให้โดดเด่นและสื่อสารได้อย่างมีประสิทธิภาพ
@@ -78,7 +65,9 @@
           </div>
 
           <div class="card">
-            <h3>ความปลอดภัยและความเป็นส่วนตัว</h3>
+            <h3>
+              <i class="fas fa-shield-alt"></i> ความปลอดภัยและความเป็นส่วนตัว
+            </h3>
             <p>
               ระบบปกป้องข้อมูล การรายงาน การควบคุมความเป็นส่วนตัว
               และการยืนยันตัวตน เพื่อให้ผู้ใช้ใช้งานได้อย่างมั่นใจ
@@ -86,7 +75,7 @@
           </div>
 
           <div class="card">
-            <h3>ข่าวสารและการค้นพบ</h3>
+            <h3><i class="fas fa-globe"></i> ข่าวสารและการค้นพบ</h3>
             <p>
               ฟีเจอร์แนะนำข่าว กิจกรรมเพื่อนบ้าน Marketplace และเพจที่เกี่ยวข้อง
               เพื่อให้ผู้ใช้ค้นพบสิ่งใหม่ ๆ ที่มีประโยชน์ต่อตัวเอง
@@ -95,72 +84,63 @@
         </div>
       </section>
 
-      <hr style="border: 0; border-top: 1px solid #ddd; margin: 50px 0" />
+      <hr class="divider" />
 
-      <section class="pricing" style="overflow-x: auto">
-        <h2 style="text-align: center; margin-bottom: 30px">
-          เปรียบเทียบแพ็กเกจบริการ
-        </h2>
+      <section class="pricing-section">
+        <h2>เปรียบเทียบแพ็กเกจบริการ</h2>
 
-        <table
-          border="1"
-          cellpadding="15"
-          cellspacing="0"
-          style="
-            width: 100%;
-            border-collapse: collapse;
-            text-align: center;
-            background-color: white;
-            border: 1px solid #ddd;
-          "
-        >
-          <thead style="background-color: #1877f2; color: white">
-            <tr>
-              <th style="text-align: left">ฟีเจอร์</th>
-              <th>Basic</th>
-              <th>Pro</th>
-              <th>Premium</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: left">การเชื่อมต่อและแชท</td>
-              <td>✔</td>
-              <td>✔</td>
-              <td>✔</td>
-            </tr>
-            <tr>
-              <td style="text-align: left">สร้างกลุ่มและชุมชน</td>
-              <td>✔</td>
-              <td>✔ (เพิ่มสมาชิกได้มากกว่า)</td>
-              <td>✔ (ไม่จำกัดสมาชิก)</td>
-            </tr>
-            <tr>
-              <td style="text-align: left">เครื่องมือสร้างคอนเทนต์</td>
-              <td>พื้นฐาน</td>
-              <td>ขั้นกลาง</td>
-              <td>ขั้นสูง + เครื่องมือโปร</td>
-            </tr>
-            <tr>
-              <td style="text-align: left">ฟีเจอร์ธุรกิจ</td>
-              <td>พื้นฐาน</td>
-              <td>โฆษณาเบื้องต้น</td>
-              <td>โฆษณาระดับมืออาชีพ</td>
-            </tr>
-            <tr>
-              <td style="text-align: left">ความปลอดภัย</td>
-              <td>มาตรฐาน</td>
-              <td>สูง</td>
-              <td>ระดับองค์กร</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="service-table">
+            <thead>
+              <tr>
+                <th style="text-align: left">ฟีเจอร์</th>
+                <th>Basic</th>
+                <th>Pro</th>
+                <th>Premium</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: left">การเชื่อมต่อและแชท</td>
+                <td>✔</td>
+                <td>✔</td>
+                <td>✔</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">สร้างกลุ่มและชุมชน</td>
+                <td class="text-detail">✔</td>
+                <td class="text-detail">✔ (เพิ่มสมาชิกได้มากกว่า)</td>
+                <td class="text-detail">✔ (ไม่จำกัดสมาชิก)</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">เครื่องมือสร้างคอนเทนต์</td>
+                <td class="text-detail">พื้นฐาน</td>
+                <td class="text-detail">ขั้นกลาง</td>
+                <td class="text-detail">ขั้นสูง + เครื่องมือโปร</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">ฟีเจอร์ธุรกิจ</td>
+                <td class="text-detail">พื้นฐาน</td>
+                <td class="text-detail">โฆษณาเบื้องต้น</td>
+                <td class="text-detail">โฆษณาระดับมืออาชีพ</td>
+              </tr>
+              <tr>
+                <td style="text-align: left">ความปลอดภัย</td>
+                <td class="text-detail">มาตรฐาน</td>
+                <td class="text-detail">สูง</td>
+                <td class="text-detail">ระดับองค์กร</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </div>
-    <div id="footer">
+
+    <footer id="footer">
       <p>
         Facebook &copy; 2025 เชื่อมต่อผู้คนทั่วโลกเพื่อสร้างชุมชนที่แข็งแรงขึ้น
       </p>
-    </div>
+    </footer>
+    <a href="#" class="btn-top">↑ Top</a>
   </body>
 </html>

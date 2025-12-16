@@ -1,55 +1,66 @@
-/* ========================
-   Universal Selector & Reset
-   ======================== */
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Roboto:wght@400;500;700&display=swap");
+
+/* =========================================
+   1. RESET & GLOBAL STYLES
+   ========================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  /* 2.ข ใช้ rem กับ font-size พื้นฐาน (ถ้ากำหนด html font-size) */
-  /* ในที่นี้กำหนดพื้นฐานให้ body อ่านง่าย */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f0f2f5; /* สี Secondary */
-  color: #050505; /* สี Neutral */
+html {
+  scroll-behavior: smooth;
 }
 
-/* ========================
-       Element Selectors
-   ======================== */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  color: #1c1e21;
+  line-height: 1.6;
+}
+
+/* ตั้งค่ารูปภาพพื้นฐาน */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================
+   2. TYPOGRAPHY (ตัวอักษร)
+   ========================================= */
 h1,
 h2,
 h3 {
   font-weight: 700;
-  margin-bottom: 0.5rem; /* 2.ข ใช้ rem กับ margin */
+  margin-bottom: 0.5rem;
 }
 
 h1 {
-  font-size: 2.5rem; /* 2.ข ใช้ rem กับ font-size */
+  font-size: 2.5rem;
   color: #1877f2;
   text-align: center;
   letter-spacing: -1px;
 }
 
 h2 {
-  font-size: 2rem; /* 2.ข ใช้ rem */
+  font-size: 2rem;
   color: #333333;
-  /* 2.ก ใช้ px กับ Border */
   border-bottom: 2px solid #1877f2;
-  padding-bottom: 10px; /* 2.ก ใช้ px กับ padding เล็กๆ */
+  padding-bottom: 10px;
   margin-top: 30px;
 }
 
 h3 {
-  font-size: 1.5rem; /* 2.ข ใช้ rem */
+  font-size: 1.5rem;
   color: #606770;
 }
 
 p {
-  font-size: 1rem; /* 2.ข ใช้ rem */
-  line-height: 1.6;
+  font-size: 1rem;
   margin-bottom: 1rem;
   color: #1c1e21;
 }
@@ -66,174 +77,80 @@ a:hover {
   color: #bd1616;
 }
 
-/* ========================
-        Class Selectors
-   ======================== */
-.btn {
-  display: inline-block;
-  padding: 10px 20px; /* 2.ก ใช้ px กับ small spacing */
-  background-color: #42b72a;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem; /* 2.ข ใช้ rem */
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #2053a4;
-  text-decoration: none;
-}
-
+/* =========================================
+   3. LAYOUT & CONTAINERS
+   ========================================= */
 .container {
-  /* 2.ค ใช้ Percentage (%) กับความกว้าง */
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 20px;
 }
 
-/* ========================
-        ID Selectors 
-   ======================== */
+.page-content {
+  background-color: transparent;
+}
+
+/* =========================================
+   4. NAVIGATION BAR (Sticky Menu)
+   ========================================= */
+.nav-bar {
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Sticky Position */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.nav-bar a {
+  color: #65676b;
+  margin: 0 15px;
+  font-size: 1rem;
+}
+
+.nav-bar a:hover,
+.nav-bar a.active {
+  color: #1877f2;
+  font-weight: 700;
+
+  /* เน้นย้ำสถานะ */
+  border-bottom: 3px solid #1877f2;
+  padding-bottom: 5px;
+}
+
+.nav-bar .logo {
+  font-size: 1.8rem;
+  color: #1877f2;
+  font-weight: bold;
+  margin-left: 0;
+  letter-spacing: -0.5px;
+}
+
+/* =========================================
+   5. HEADER & HERO SECTION
+   ========================================= */
 #Header {
   background-color: #3b5998;
   padding: 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* 5.ก Sticky Header */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-#Header figure {
-  margin: 0;
-  padding: 0;
 }
 
 #Header img {
-  width: 200px; /* 2.ก ใช้ px กำหนดขนาดรูป */
-  height: auto;
-  display: block;
+  width: 200px;
 }
 
-/* ============
-      footer 
-   ============ */
-#footer {
-  background-color: #3b5998;
-  color: #ffffff;
-  padding: 30px 20px;
-  margin-top: 50px;
-  text-align: left;
-  font-size: 0.9rem;
-}
-#footer p {
-  color: #ffffff;
-  margin: 0; /*เปลี่ยนสีข้อความให้เป็นสีขาว */
-}
-
-/* ========================
-   Component: Navigation Bar
-   ======================== */
-.nav-bar {
-  text-align: right; /* จัดเมนูไปทางขวา */
-  margin-bottom: 20px; /* เว้นระยะห่างจากเนื้อหาส่วนล่าง */
-
-  /* ข้อ 3: border-bottom เพื่อ accent (ขีดเส้นใต้กล่องเมนู) */
-  border-bottom: 2px solid #e5e5e5;
-  padding-bottom: 10px; /* เว้นระยะให้เส้นขอบไม่ชิดตัวหนังสือเกินไป */
-  margin-bottom: 20px;
-  position: sticky; /* สั่งให้ติดหนึบ */
-  top: 0; /* ติดชิดขอบบนสุด */
-  z-index: 100; /* ลอยทับเนื้อหาอื่น (Layer บนสุด) */
-  background-color: rgba(255, 255, 255, 0.95);
-  width: 100%;
-  border-bottom: 2px solid #e5e5e5;
-  padding: 10px 40px;
-
-  display: flex; /* ใช้ Flexbox */
-  justify-content: flex-end; /* ดันเมนูไปขวาสุด */
-  align-items: center; /* จัดกึ่งกลางแนวตั้ง */
-  gap: 20px;
-}
-
-/* ตัวลิงก์เมนู (หน้าแรก, เกี่ยวกับ, บริการ...) */
-.nav-bar a {
-  text-decoration: none; /* เอาขีดเส้นใต้ออก */
-  color: #1877f2; /* สีน้ำเงิน Facebook */
-  font-weight: 600; /* ตัวหนาปานกลาง */
-
-  /* ข้อ 1: padding 15px 20px สำหรับ nav items */
-  padding: 15px 20px;
-  display: inline-block; /* (สำคัญ) ใส่บรรทัดนี้ เพื่อให้ padding ทำงานสมบูรณ์ */
-
-  border-radius: 30px; /* (แถม) ทำปุ่มมนๆ ให้เหมือน Facebook ยุคใหม่ */
-}
-
-.nav-bar a:hover {
-  background-color: #f0f2f5; /* พื้นหลังสีเทาจางๆ ตอนชี้ */
-  text-decoration: none; /* (ปรับแก้) ไม่ต้องขีดเส้นใต้แล้ว เพราะมีพื้นหลังแทน */
-}
-
-/* ========================
-       Pseudo-classes
-   ======================== */
-.card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  /* 2.ก ใช้ px กับ Box Shadow */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.btn:active {
-  transform: scale(0.95);
-}
-
-article ol li {
-  padding: 15px;
-  border-radius: 6px;
-  margin-bottom: 5px;
-}
-
-article ol li:nth-child(odd) {
-  background-color: #ffffff;
-  border-left: 4px solid #1877f2;
-}
-
-article ol li:nth-child(even) {
-  background-color: #e4e6eb;
-}
-
-/* ========================
-        Percentage (%) 
-   ======================== */
-
-/* 1. สั่งให้รูปภาพทุกรูปในเว็บ ไม่ล้นกรอบ */
-img {
-  max-width: 100%;
-  height: auto; /* สูงตามสัดส่วนเดิม */
-}
-
-/* =============================
-   Viewport Units (Hero Section)
-   ============================= */
 .hero {
   position: relative;
-  height: 100vh;
+  height: 100vh; /* เต็มความสูงหน้าจอ */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -251,203 +168,452 @@ img {
   border-bottom: 5px solid #1877f2;
 }
 
-/* ปรับหัวข้อให้ชัดขึ้น */
+.hero article {
+  /* --- Layout Positioning (สำคัญสำหรับการจัดกึ่งกลาง) --- */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* --- Styling --- */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 0;
+
+  /* --- Animation Properties --- */
+  opacity: 0;
+  animation: slideInUp 1s ease-out 0.5s forwards; /* 2. นำ Animation ที่สร้างไว้ไปใช้ */
+}
+
 .hero h2 {
-  font-size: 5vw;
+  font-size: 3rem;
   margin-bottom: 20px;
   color: #1877f2;
-  text-shadow: 2px 2px 0px #ffffff;
-}
-/* ตกแต่งกล่องข้อความข้างใน Hero ให้ลอยเด่นออกมา */
-.hero article {
-  position: absolute; /* ลอยอิสระเทียบกับแม่ */
-  top: 50%; /* ดันลงมา 50% ของกล่องแม่ */
-  left: 50%; /* ดันไปขวา 50% ของกล่องแม่ */
-  transform: translate(-50%, -50%); /* ดึงกลับมา 50% เพื่อให้กึ่งกลางเป๊ะๆ */
-
-  background-color: rgba(255, 255, 255, 0.9); /* สีขาวโปร่งแสง 90% */
-  padding: 40px; /* เว้นระยะขอบข้างในให้น่าอ่าน */
-  border-radius: 15px; /* มุมโค้งมน */
-  max-width: 800px; /* จำกัดความกว้างไม่ให้ยืดเต็มจอเกินไป */
-  margin: 0 auto; /* จัดกึ่งกลางแนวนอน */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* ใส่เงาให้กล่องดูลอยมีมิติ */
-  text-align: center; /* จัดตัวหนังสือให้อยู่ตรงกลางกล่อง */
+  border: none;
 }
 
-/* ปรับหัวข้อข้างในให้สวยขึ้นอีกนิด */
-.hero article h2 {
-  color: #1877f2; /* สีน้ำเงิน Facebook */
-  font-size: 3rem; /* ขนาดกำลังดี */
-  margin-bottom: 20px;
-}
-
-/* ========================
-   4.ค Card Component (Services)
-   ======================== */
+/* =========================================
+   6. COMPONENTS (Cards, Buttons)
+   ========================================= */
+/* --- Cards --- */
 .card {
-  background-color: white; /* ใส่สีพื้นหลังให้ชัดเจน */
-
-  /* สเปคจากโจทย์เป๊ะๆ */
-  padding: 20px; /* */
-  margin: 10px 0; /* */
-  border: 1px solid #ddd; /* */
-  border-radius: 8px; /* */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* */
-
-  /* (แถม) ทำให้การ์ดขยับนิดๆ ตอนเอาเมาส์ชี้ */
+  background-color: white;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border-color: #1877f2;
 }
 
-/* ========================
-   4.ง Container
-   ======================== */
-.container {
-  width: 90%; /* ความกว้างปกติ (เผื่อจอเล็ก) */
-  max-width: 1200px; /* [โจทย์] ความกว้างสูงสุดไม่เกิน 1200px */
-  margin: 0 auto; /* [โจทย์] จัดกึ่งกลางหน้าจอ */
-  padding: 40px 20px; /* [โจทย์] เว้นขอบบนล่าง 40px, ซ้ายขวา 20px */
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #42b72a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
 }
 
-/* ========================
-   4.จ Footer
-   ======================== */
-#footer {
-  background-color: #3b5998; /* [โจทย์] สีพื้นหลังเข้ม (ตัดกับเนื้อหา) */
-  color: #ffffff; /* ตัวหนังสือสีขาว */
-
-  padding: 30px 20px; /* [โจทย์] เว้นขอบข้างในตามสั่งเป๊ะๆ */
-  margin-top: 50px; /* [โจทย์] เว้นระยะห่างจาก Content ด้านบน */
-
-  text-align: left; /* (ตามที่คุณเคยตั้งไว้) */
-  font-size: 0.9rem;
+.btn:hover {
+  background-color: #36a420;
+  text-decoration: none;
+  color: white;
 }
 
-/* (อย่าลืมส่วนแก้สีตัวหนังสือใน footer ที่เราคุยกันเมื่อกี้) */
-#footer p {
-  color: #ffffff;
-  margin: 0;
+.btn:active {
+  transform: scale(0.95);
 }
 
-/* ========================
-   6.ข Layout (3-Column Grid)
-   ======================== */
-.services-grid {
-  display: grid; /* 2. ใช้ Grid */
-  grid-template-columns: repeat(2, 1fr); /* 1. จัดเรียง 3 คอลัมน์ */
-  gap: 20px; /* ระยะห่างระหว่างการ์ด */
-  width: 100%; /* ดันให้เต็มความกว้าง */
-  padding-bottom: 50px;
-}
-
-/* (เพิ่ม RWD) ทำให้มันดูดีบนมือถือด้วย (ไม่ข้ามโจทย์ แต่เป็นการเสริม) */
-@media (max-width: 768px) {
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ========================
-   5.ค & 5.ง Fixed Elements
-   ======================== */
-
-/* ปุ่มกลับขึ้นบน */
+/* --- Floating Buttons (Chat & Top) --- */
 .btn-top {
-  position: fixed; /* ติดตายที่หน้าจอ */
-  bottom: 20px; /* ห่างจากล่าง 20px */
-  right: 20px; /* ห่างจากขวา 20px */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   background-color: #1877f2;
   color: white;
   padding: 10px 15px;
   border-radius: 5px;
-  text-decoration: none;
-  z-index: 50; /* อยู่ต่ำกว่า Header แต่สูงกว่าเนื้อหา */
+  z-index: 50;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* ปุ่มแชท */
 .chat-widget {
-  position: fixed; /* ติดตายที่หน้าจอ */
-  bottom: 70px; /* อยู่เหนือปุ่ม Top ขึ้นมาหน่อย */
+  position: fixed;
+  bottom: 70px;
   right: 20px;
-  background-color: #42b72a; /* สีเขียว */
+  background-color: #42b72a;
   color: white;
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
-  z-index: 50; /* */
+  z-index: 50;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.nav-bar {
-  position: sticky; /* คำสั่งเดิม */
-  top: 0; /* คำสั่งเดิม */
-  z-index: 1000; /* ดันให้สูงที่สุด */
-
-  background-color: white; /* ✅ เพิ่ม: ใส่สีพื้นหลังให้ชัดเจน */
-  width: 100%; /* ✅ เพิ่ม: ให้กว้างเต็มจอ */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* (แถม) ใส่เงาใต้เมนูให้ดูสวย */
+/* =========================================
+   7. GRIDS & PAGE SECTIONS
+   ========================================= */
+/* --- Services Grid --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: 100%;
+  padding-bottom: 50px;
 }
 
-/* ========================
-   6.ค Team Members Grid Layout
-   ======================== */
+/* --- Team Grid --- */
 .team {
-  display: grid; /* ใช้ Grid */
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); /* สูตร Responsive ยืดหดตามจอ */
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
   margin-top: 30px;
 }
 
 .team-member {
   background-color: white;
-  padding: 30px;
+  padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* ========================
-   6.ง Form Layout (Contact Page)
-   ======================== */
+.team-member img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  border: 3px solid #f0f2f5;
+}
+
+/* --- Contact Form --- */
 form {
-  display: flex; /* ใช้ Flexbox */
-  flex-direction: column; /* เรียงแนวตั้ง */
-  gap: 15px; /* เว้นระยะห่าง */
-  max-width: 600px;
-  margin: 0 auto; /* จัดกึ่งกลางหน้า */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   background-color: white;
   padding: 30px;
   border: 1px solid #ddd;
   border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 input,
-textarea,
-button {
+textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+button[type="submit"] {
+  background-color: #1877f2;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
   font-size: 1rem;
 }
 
-button {
-  background-color: #1877f2;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
+button[type="submit"]:hover {
+  background-color: #166fe5;
 }
 
-button:hover {
+/* =========================================
+   8. FOOTER
+   ========================================= */
+#footer {
+  background-color: #3b5998;
+  color: #ffffff;
+  padding: 30px 20px;
+  margin-top: 50px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+#footer p {
+  color: #ffffff;
+  margin: 0;
+}
+
+/* =========================================
+   9. ABOUT PAGE SPECIFICS
+   ========================================= */
+
+/* จัดตัวหนังสือใน Story ให้กระจายเต็มบรรทัด */
+.story-section p {
+  text-align: justify;
+  max-width: 800px;
+  margin: 0 auto; /* จัดกึ่งกลางหน้า */
+}
+
+/* เส้นคั่น */
+.divider {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 40px 0;
+}
+
+/* Mission & Vision Grid (แบ่ง 2 ฝั่ง) */
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* การ์ด Mission/Vision */
+.mv-card {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.mv-card h2 {
+  color: #1877f2;
+  border: none; /* เอาเส้นใต้เดิมออก */
+  text-align: left;
+}
+
+/* ตกแต่งคำคม Quote */
+.mv-card .quote {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #1c1e21;
+  border-left: 4px solid #1877f2; /* ขีดเส้นสีฟ้าข้างหน้า */
+  padding-left: 15px;
+  margin-bottom: 20px;
+  background-color: #f7f8fa;
+  padding: 15px;
+  border-radius: 0 5px 5px 0;
+}
+
+/* =========================================
+   10. SERVICES PAGE SPECIFICS
+   ========================================= */
+
+/* --- Table Styles (ตารางเปรียบเทียบ) --- */
+.pricing-section h2 {
+  margin-bottom: 30px;
+}
+
+.table-responsive {
+  overflow-x: auto; /* ให้เลื่อนซ้ายขวาได้ถ้าดูในมือถือ */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  min-width: 700px; /* บังคับความกว้างขั้นต่ำเพื่อให้อ่านง่าย */
+}
+
+.service-table th,
+.service-table td {
+  padding: 15px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+.service-table thead th {
+  background-color: #1877f2;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ทำแถบสีสลับกันให้อ่านง่าย (Zebra striping) */
+.service-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.service-table tbody tr:hover {
+  background-color: #f0f8ff; /* เปลี่ยนสีเมื่อเอาเมาส์ชี้แถว */
+}
+
+.service-table .text-detail {
+  font-size: 0.9rem;
+  color: #606770;
+}
+
+/* =========================================
+   11. CONTACT PAGE SPECIFICS
+   ========================================= */
+
+/* --- Layout 2 คอลัมน์ --- */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; /* ตกบรรทัดเมื่อจอเล็ก */
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.contact-info,
+.contact-form-wrapper {
+  flex: 1; /* แบ่งพื้นที่เท่ากัน */
+  min-width: 300px; /* ขนาดขั้นต่ำก่อนตัดบรรทัด */
+}
+
+/* --- Info Box Styling --- */
+.contact-icon {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.info-box legend {
+  font-weight: bold;
+  color: #1877f2;
+  padding: 0 10px;
+  font-size: 1.1rem;
+}
+
+.info-box a {
+  color: #1877f2;
+  text-decoration: none;
+}
+
+/* --- Form Styling (ใช้ร่วมกับ input/textarea ในส่วน Global) --- */
+.contact-form-wrapper {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  color: #1c1e21;
+}
+
+/* --- Primary Button (สำหรับปุ่มส่งข้อความ) --- */
+.btn-primary {
+  background-color: #1877f2;
+  color: white;
+  width: 100%;
+}
+
+.btn-primary:hover {
   background-color: #166fe5;
+}
+
+/* --- Map Section --- */
+.map-section {
+  margin-top: 50px;
+}
+
+.map-section h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.map-section iframe {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* --- 12. Icon Styling --- */
+/* จัดระยะห่างระหว่าง Icon กับ Text ใน Card */
+.services-grid .card h3 i {
+  margin-right: 10px;
+  color: #1877f2; /* ใช้สีหลักของเว็บ */
+}
+
+/* --- 13. ANIMATION KEYFRAMES --- */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    /* เริ่มจากด้านล่าง 50px */
+    transform: translate(-50%, 50px);
+  }
+  to {
+    opacity: 1;
+    /* จบที่ตำแหน่งกึ่งกลางตามที่ตั้งไว้เดิม */
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* --- 14. MEDIA QUERIES (Mobile View) --- */
+@media (max-width: 480px) {
+  /* ลดขนาดตัวอักษรหลักในมือถือ */
+  body {
+    font-size: 14px;
+  }
+
+  /* ลดขนาด Container Padding */
+  .container {
+    padding: 20px 10px;
+  }
+
+  /* เมนูแนวนอนที่เคยจัดกลาง อาจจะเบียดกัน */
+  .nav-bar a {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
+
+  /* ซ่อนปุ่ม Chat ในมือถือเพื่อไม่ให้บังจอ */
+  .chat-widget {
+    display: none;
+  }
+
+  /* ให้กล่องข้อมูลติดต่อเรียงซ้อนกันแนวตั้งสวยงามขึ้น */
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* ทีมงานซูมเมื่อชี้ */
+.team-member img {
+  transition: transform 0.3s ease; /* เพิ่ม Transition ให้รูป */
+}
+
+.team-member:hover img {
+  transform: scale(1.1); /* ขยายรูป 10% เมื่อเอาเมาส์ชี้การ์ด */
+}
+
+.team-member {
+  overflow: hidden; /* ป้องกันรูปขยายล้นกรอบ */
 }
