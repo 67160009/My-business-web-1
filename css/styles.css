@@ -148,6 +148,11 @@ a:hover {
   /* ข้อ 3: border-bottom เพื่อ accent (ขีดเส้นใต้กล่องเมนู) */
   border-bottom: 2px solid #e5e5e5;
   padding-bottom: 10px; /* เว้นระยะให้เส้นขอบไม่ชิดตัวหนังสือเกินไป */
+  margin-bottom: 20px;
+  position: sticky; /* สั่งให้ติดหนึบ */
+  top: 0; /* ติดชิดขอบบนสุด */
+  z-index: 100; /* ลอยทับเนื้อหาอื่น (Layer บนสุด) */
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 /* ตัวลิงก์เมนู (หน้าแรก, เกี่ยวกับ, บริการ...) */
@@ -227,6 +232,7 @@ img {
    Viewport Units (Hero Section)
    ============================= */
 .hero {
+  position: relative;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -254,6 +260,11 @@ img {
 }
 /* ตกแต่งกล่องข้อความข้างใน Hero ให้ลอยเด่นออกมา */
 .hero article {
+  position: absolute; /* ลอยอิสระเทียบกับแม่ */
+  top: 50%; /* ดันลงมา 50% ของกล่องแม่ */
+  left: 50%; /* ดันไปขวา 50% ของกล่องแม่ */
+  transform: translate(-50%, -50%); /* ดึงกลับมา 50% เพื่อให้กึ่งกลางเป๊ะๆ */
+
   background-color: rgba(255, 255, 255, 0.9); /* สีขาวโปร่งแสง 90% */
   padding: 40px; /* เว้นระยะขอบข้างในให้น่าอ่าน */
   border-radius: 15px; /* มุมโค้งมน */
@@ -336,4 +347,36 @@ img {
   .services-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ========================
+   5.ค & 5.ง Fixed Elements
+   ======================== */
+
+/* ปุ่มกลับขึ้นบน */
+.btn-top {
+  position: fixed; /* ติดตายที่หน้าจอ */
+  bottom: 20px; /* ห่างจากล่าง 20px */
+  right: 20px; /* ห่างจากขวา 20px */
+  background-color: #1877f2;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 50; /* อยู่ต่ำกว่า Header แต่สูงกว่าเนื้อหา */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* ปุ่มแชท */
+.chat-widget {
+  position: fixed; /* ติดตายที่หน้าจอ */
+  bottom: 70px; /* อยู่เหนือปุ่ม Top ขึ้นมาหน่อย */
+  right: 20px;
+  background-color: #42b72a; /* สีเขียว */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  z-index: 50; /* */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
